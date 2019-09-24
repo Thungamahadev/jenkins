@@ -7,25 +7,23 @@ pipeline {
 			steps {		
 				echo "******************************"
 				echo "REMOVING OBJECT AND EXE FILES"
-				echo "******************************"			'
+				echo "******************************"			
 			}
 		}
 		stage ('BUILD') {
 				agent { label 'slave2' }
-			steps {
-			agent master
+			steps {			
 				echo "*****************************"
 				echo "CREATING EXE FILES"
 				echo "*****************************"
-			//	sh './build.sh'
+			
 				sh 'pwd'
 				sh 'ls'
 			}
 		}
 		stage ('DEPLOY') {
 				agent { label 'slave1' }
-			steps {
-			agent slave2
+			steps {			
 				echo "*****************************"
 				echo "DEPLOYING FILES"
 				echo "*****************************"
