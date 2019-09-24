@@ -7,8 +7,7 @@ pipeline {
 			steps {		
 				echo "******************************"
 				echo "REMOVING OBJECT AND EXE FILES"
-				echo "******************************"
-			//	sh 'make clean'
+				echo "******************************"			'
 			}
 		}
 		stage ('BUILD') {
