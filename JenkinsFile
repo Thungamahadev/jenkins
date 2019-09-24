@@ -16,9 +16,7 @@ pipeline {
 				echo "*****************************"
 				echo "CREATING EXE FILES"
 				echo "*****************************"
-			
-				sh 'pwd'
-				sh 'ls'
+
 			}
 		}
 		stage ('DEPLOY') {
