@@ -1,0 +1,36 @@
+pipeline {
+	agent none
+	
+	stages {
+		stage ('CLEANING STAGE') {
+			steps {
+			agent slave1
+				echo "******************************"
+				echo "REMOVING OBJECT AND EXE FILES"
+				echo "******************************"
+				sh 'make clean'
+			}
+		}
+		stage ('BUILD') {
+			steps {
+			agent master
+				echo "*****************************"
+				echo "CREATING EXE FILES"
+				echo "*****************************"
+				sh './build.sh'
+				sh 'pwd'
+				sh 'ls'
+			}
+		}
+		stage ('DEPLOY') {
+			steps {
+			agent slave2
+				echo "*****************************"
+				echo "DEPLOYING FILES"
+				echo "*****************************"
+				echo "DEPLOYED FILES"				
+			}
+		}
+
+	}
+}
