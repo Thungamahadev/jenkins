@@ -3,9 +3,9 @@
    stages {
      stage('build') {
      steps { 
-     sh 'String string = "This is a string to check whether a string contains a substring";'
-     sh 'String substring = "string";'
-     sh 'println(string.contains(substring));'
+     String string = "This is a string to check whether a string contains a substring";
+     String substring = "string";
+     println(string.contains(substring));
 }
 }
 }
