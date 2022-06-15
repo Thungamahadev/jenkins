@@ -1,33 +1,3 @@
-pipeline {
-	agent none
-	
-	stages {
-		stage ('CLEANING STAGE') {
-				agent { label 'slave1' }
-			steps {		
-				echo "******************************"
-				echo "REMOVING OBJECT AND EXE FILES"
-				echo "******************************"			
-			}
-		}
-		stage ('BUILD') {
-				agent { label 'slave2' }
-			steps {			
-				echo "*****************************"
-				echo "CREATING EXE FILES"
-				echo "*****************************"
-
-			}
-		}
-		stage ('DEPLOY') {
-				agent { label 'slave1' }
-			steps {			
-				echo "*****************************"
-				echo "DEPLOYING FILES"
-				echo "*****************************"
-				echo "DEPLOYED FILES"				
-			}
-		}
-
-	}
-}
+   String string = "This is a string to check whether a string contains a substring";
+   String substring = "string";
+   println(string.contains(substring));
